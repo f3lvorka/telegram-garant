@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Гарант | Безопасные сделки</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #4a148c, #3d1e7a);
+            color: #f4f4f4;
+            text-align: center;
+            overflow-x: hidden;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        header {
+            padding: 40px 20px;
+            background: rgba(0, 0, 0, 0.85);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            border-bottom: 2px solid #6a1b9a;
+        }
+        header h1 {
+            font-size: 36px;
+            color: #fff;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        header p {
+            font-size: 18px;
+            color: #ddd;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 10px 0;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background 0.3s, transform 0.2s;
+        }
+        nav ul li a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.1);
+        }
+        section {
+            padding: 100px 20px 20px;
+            max-width: 900px;
+            margin: 120px auto 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .content {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        .contact-info {
+            font-size: 20px;
+            color: #ddd;
+        }
+        .contact-info a {
+            color: #9c27b0;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        .testimonial {
+            font-style: italic;
+            margin: 20px 0;
+        }
+        .testimonial p {
+            color: #ddd;
+        }
+        .testimonial cite {
+            color: #bbb;
+        }
+        @media (max-width: 768px) {
+            header {
+                padding: 10px;
+            }
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Гарант в Telegram</h1>
+        <p>Безопасные сделки для всех</p>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showPage('home')">Главная</a></li>
+                <li><a href="#" onclick="showPage('how')">Как работаю</a></li>
+                <li><a href="#" onclick="showPage('reviews')">Отзывы</a></li>
+                <li><a href="#" onclick="showPage('contacts')">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="home" class="content active">
+        <h2>Добро пожаловать!</h2>
+        <p>Я — профессиональный гарант. Провожу безопасные сделки в Telegram, обеспечивая 100% безопасность обеих сторон.</p>
+    </section>
+    
+    <section id="how" class="content">
+        <h2>Как я работаю</h2>
+        <p>Механика сделки: клиент переводит деньги гаранту, после выполнения условий сделки деньги передаются второй стороне.</p>
+    </section>
+    
+    <section id="reviews" class="content">
+        <h2>Отзывы</h2>
+        <div class="testimonial">
+            <p>"Отличный гарант, сделка прошла без проблем!"</p>
+            <cite>- Иван, клиент</cite>
+        </div>
+        <div class="testimonial">
+            <p>"Очень быстро и безопасно. Спасибо за помощь!"</p>
+            <cite>- Марина, клиент</cite>
+        </div>
+    </section>
+    
+    <section id="contacts" class="content">
+        <h2>Контакты</h2>
+        <p class="contact-info">Связаться со мной можно через <a href="https://t.me/ваш_ник" target="_blank">Telegram</a>.</p>
+    </section>
+
+    <script>
+        function showPage(pageId) {
+            document.querySelectorAll('.content').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(pageId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
